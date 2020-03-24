@@ -28,6 +28,7 @@ demonMETRICS <- function(rslist, ext, Nraster, saveResults){
     writeRaster(Seasonality, "Seasonality_metric", format = "GTiff", overwrite = TRUE)
   }
   DHI <- stack(Cummulative, MeanRas, MaxRas, MinRas, SDRas, Seasonality)
+  names(DHI) <- c("Cummulative", "Mean", "Maximum", "Minimum", "SD", "Seasonality")
   return(DHI)
 }
 
